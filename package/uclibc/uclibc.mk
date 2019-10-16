@@ -358,12 +358,10 @@ endif
 # Commands
 #
 
-UCLIBC_EXTRA_USER_CFLAGS := -march=mips32 -fno-delayed-branch -mno-check-zero-division -mno-llsc -mno-imadd -mno-mad
-
 UCLIBC_MAKE_FLAGS = \
 	ARCH="$(UCLIBC_TARGET_ARCH)" \
 	CROSS_COMPILE="$(TARGET_CROSS)" \
-	UCLIBC_EXTRA_CFLAGS="$(TARGET_ABI) $(UCLIBC_EXTRA_USER_CFLAGS)" \
+	UCLIBC_EXTRA_CFLAGS="$(TARGET_ABI)" \
 	HOSTCC="$(HOSTCC)"
 
 define UCLIBC_KCONFIG_FIXUP_CMDS
